@@ -1,12 +1,15 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-import { Formulaire } from './components/Formulaire';
+import EditContact from './redux/EditContact';
+import Formulaire from './redux/Formulaire';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <Formulaire />
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Formulaire/>}/>
+      <Route path='/edit-contact/:id' element={<EditContact/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
